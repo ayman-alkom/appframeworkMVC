@@ -289,7 +289,9 @@
     
     /**
      * Internal function that loads a view via AJAX and appends it to the dom
-     * @param {String} Path
+     * @param {String} path Path
+     * @param {String} controller
+     * @param {String} name id attribute of script tag
      * @api private
      * @title $.mvc.controller.addView
      */
