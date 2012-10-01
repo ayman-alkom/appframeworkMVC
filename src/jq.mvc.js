@@ -60,7 +60,7 @@
              */
              
             setViewType:function(type){
-                this._templateType=typel
+                this._templateType=type;
             },
             /**
              * Function to execute when $.mvc.app is ready (controllers and models are loaded async)
