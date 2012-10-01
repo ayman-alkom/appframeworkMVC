@@ -331,7 +331,7 @@
      * This is the base model that all models inherit from.  This is used internally by $.mvc.model.extend
        
      * @param {String} name
-     * @param {Object} properties and methods to add to the model
+     * @param {Object} opts properties and methods to add to the model
      * @api private
      * @title $.mvc.model
      */
