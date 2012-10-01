@@ -409,8 +409,8 @@
         $.mvc.model.extend('model',{foo:'bar'},myCustomAdapter)
         ```
      * @param {String} name
-     * @param {Object} default methods/properties
-     * @param {Object} [storageAdapter] - look below for the default
+     * @param {Object} obj default methods/properties
+     * @param {Object} [storageAdapter] - object implmenting storageAdapter interface (look below for the default)
      */
     $.mvc.model.extend = function(name, obj, storageAdapter) {
         storageAdapters[name] = storageAdapter ? storageAdapter : (localAdapter.linkerCache[name]={},localAdapter);
