@@ -235,8 +235,8 @@
         ```
         $.mvc.route("/main/list/foo/bar");
         ```
-     * @param {String} Url string
-     * @param {Object} [Event] - used to prevent default for anchor clicks, etc
+     * @param {String} url string
+     * @param {Object} [evt] - used to prevent default for anchor clicks, etc
      * @title $.mvc.controller.route
      */
     $.mvc.route = function(url, evt) {
