@@ -325,7 +325,7 @@
 //model.js   
 (function($) {
     
-    storageAdapters = {}; //Each model can have it's own connector
+    var storageAdapters = {}; //Each model can have it's own connector
     var baseOpts={}; //Base options/configs for each model to inherit from
     /**
      * This is the base model that all models inherit from.  This is used internally by $.mvc.model.extend
