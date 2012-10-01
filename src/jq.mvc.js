@@ -193,8 +193,8 @@
        If you want to execute something when a controller is available, you can set an 'init' function on the object, or listen for
        the "_controllername_:ready" event
        
-     * @param {String} Controller name
-     * @param {Object} Controller object
+     * @param {String} name Controller name
+     * @param {Object} obj Controller object
      * @title $.mvc.controller.create
      */
     $.mvc.controller.create = function(name, obj) {
