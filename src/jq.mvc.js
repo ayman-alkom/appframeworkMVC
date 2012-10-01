@@ -240,6 +240,8 @@
      * @title $.mvc.controller.route
      */
     $.mvc.route = function(url, evt) {
+        var route, axt;
+
         if (url.indexOf(baseUrl) === 0)
             url = url.substring(baseUrl.length, url.length);
         if (url[0] == "/")
@@ -247,8 +249,8 @@
         url = url.split("/");
         
         if(url.length>1){
-            var route = url.splice(0, 1);
-            var axt = url.splice(0, 1);
+            route = url.splice(0, 1);
+            axt = url.splice(0, 1);
         }
         else {
             route=url[0];
