@@ -69,7 +69,7 @@
                 //execute startup functions for app
              });
              ```
-             *@param {Function} func
+             *@param {Function} fnc
              *@title app.ready(func);
              */
             ready:function(fnc){
