@@ -3,7 +3,7 @@
     /**
      * This is the main app class that gets created.  It will include files and offer a "load" when they are all ready
      */
-    $.mvc={}
+    $.mvc={};
     $.mvc.app=function(){
         var app= {
             _loadTimer:null,
@@ -154,7 +154,7 @@
                             if(that._controllersReady)
                                $(document).trigger("jqmvc:loaded");
                          }
-                      }
+                      };
                       file.onerror=function(e){console.log("error ",e);};
                       $("head").append(file);
                       delete file;
@@ -165,7 +165,7 @@
         };
         
         return app;
-    }
+    };
     
     /**
      * private properties for controllers
@@ -228,7 +228,8 @@
         }
         return $.mvc.controller[name];
 
-    }
+    };
+
     /**
      * This handles the routing of the action using MVC style url routes (/controller/action/param1/param2/)
      * This is can be called manually, or using the jqUi custom click handler
@@ -245,7 +246,7 @@
         if (url.indexOf(baseUrl) === 0)
             url = url.substring(baseUrl.length, url.length);
         if (url[0] == "/")
-            url = url.substr(1)
+            url = url.substr(1);
         url = url.split("/");
         
         if(url.length>1){
@@ -262,13 +263,13 @@
             return true;
         }
         return false;
-    }
+    };
     
     $.mvc.addRoute=function(url,fnc){
         if (url.indexOf(baseUrl) === 0)
             url = url.substring(baseUrl.length, url.length);
         if (url[0] == "/")
-            url = url.substr(1)
+            url = url.substr(1);
         url = url.split("/");
         
         if(url.length>1){
@@ -284,7 +285,7 @@
         }
         $.mvc.controller[route][axt]=fnc;
     
-    }
+    };
     
     /**
      * Internal function that loads a view via AJAX and appends it to the dom
@@ -304,7 +305,7 @@
                 controllerReady[controller]&&controllerReady[controller].init.apply(controllerReady[controller]);
             }
         });
-    }
+    };
     
 
     /**
@@ -336,8 +337,8 @@
     $.mvc.model =function(name,opts) {
         
         var self = this;
-        opts && opts['modelName'] && delete opts['modelName']
-        opts && opts['id'] && delete opts['id']
+        opts && opts['modelName'] && delete opts['modelName'];
+        opts && opts['id'] && delete opts['id'];
         if(!baseOpts[name]) //First time it's created, we want to store the options
             baseOpts[name]=opts;
         $.extend(this,opts);
@@ -361,7 +362,7 @@
                         el.modelName=self.modelName;
                         el.id=id;
                         if(callback)
-                           return callback(el)
+                           return callback(el);
                         return el;
                     }
                 );
@@ -396,7 +397,7 @@
                if(obj.toLowerCase()!="id"&&obj.toLowerCase()!="modelName")
                   this[obj]=value;
             }
-        }
+        };
 
     
     /**
@@ -414,7 +415,7 @@
         return function() {
             return new $.mvc.model(name, obj);
         }
-    }
+    };
     
     
     //Local Storage Adapter
