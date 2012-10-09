@@ -391,7 +391,7 @@
                     }
                     return;
                }
-               if(obj.toLowerCase()!="id"&&obj.toLowerCase()!="modelName")
+               if(obj.toLowerCase()!="id"&&obj.toLowerCase()!="modelname")
                   this[obj]=value;
             }
         }
