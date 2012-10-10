@@ -36,7 +36,7 @@
              *@param {String} path
              *@title app.controllersDir(path);
              */
-            controllersPath:function(path){
+            controllersDir:function(path){
                this._controllersDir=path;
             },
             /**
