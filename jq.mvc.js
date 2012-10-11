@@ -423,6 +423,8 @@
     $.mvc.model.extend = function(name, obj, storageAdapter) {
         storageAdapters[name] = storageAdapter ? storageAdapter : (localAdapter.linkerCache[name]={},localAdapter);
         return function() {
+            if(storageAdapter!==undefined)
+                $.extend(obj,storageAdapter);
             return new $.mvc.model(name, obj);
         }
     };
