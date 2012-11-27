@@ -406,6 +406,14 @@
                }
                if(obj.toLowerCase()!="id"&&obj.toLowerCase()!="modelname")
                   this[obj]=value;
+            },
+            // Returns the storageAdapter
+            getStorageAdapter:function(){
+              return storageAdapters[this.modelName];
+            },
+            // Returns the base options
+            getBaseOptions:function(){
+              return baseOpts[this.modelName];
             }
         };
 
@@ -423,8 +431,6 @@
     $.mvc.model.extend = function(name, obj, storageAdapter) {
         storageAdapters[name] = storageAdapter ? storageAdapter : (localAdapter.linkerCache[name]={},localAdapter);
         return function() {
-            if(storageAdapter!==undefined)
-                $.extend(obj,storageAdapter);
             return new $.mvc.model(name, obj);
         }
     };
