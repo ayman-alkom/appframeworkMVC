@@ -16,6 +16,23 @@
             _totalModels:0,
             _controllersDir:"controllers/",
             _modelsDir:"models/",
+            _baseDir:"",
+            /**
+             * Set the base directory for urls
+             ```
+             app.setBaseDir("starter")
+             ```
+             *@param (String) base directory
+             *@title app.setBaseDir(dir)
+             */
+            setBaseDir:function(str){
+                if(str[0]=="/")
+                    str = str.substr(1);
+                if(str[str.length-1]=="/")
+                    str=str.slice(0,-1);
+                baseUrl+="/"+str;
+            },
+
             /**
              * Looks for route changes via hash change (ala Backbone.js)
              ```
@@ -221,7 +238,7 @@
             viewsTotal[name]=obj.views.length||Object.keys(obj.views).length;
             for (var i in obj.views) 
             {
-                var shortName=typeof(i)==="number"?obj.views[i]:i;
+                var shortName=$.isArray(obj.views)?obj.views[i]:i;
                 if (!viewsCache[shortName] && jq("#" + shortName).length == 0) {
                     $.mvc.controller.addView(obj.views[i],name,shortName);
                     viewsCache[shortName] = 1;
@@ -255,6 +272,8 @@
             url = url.substring(baseUrl.length, url.length);
         if (url[0] == "/")
             url = url.substr(1);
+        if(url[url.length-1]=="/")
+            url=url.slice(0,-1);
         url = url.split("/");
         
         if(url.length>1){
