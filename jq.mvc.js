@@ -268,6 +268,8 @@
      * @title $.mvc.controller.route
      */
     $.mvc.route = function(url, evt) {
+         if(typeof(url)!=="string"&&url.nodeName&&url.nodeName.toLowerCase()=="a") 
+            url=url.href;
         var route, axt;
 
         if (url.indexOf(baseUrl) === 0)
