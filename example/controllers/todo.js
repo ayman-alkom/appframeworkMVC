@@ -33,7 +33,7 @@ var todoCtrl=$.mvc.controller.create('todo', {
             total=el.find("li").length;
             el.find(".count").html(total++);
         },
-        default:function(){
+        "default":function(){
             
             todo.getAll(function(all){
                 var active=all.filter(function(obj){return obj.isComplete==false&&obj.isArchived==false});
