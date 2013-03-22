@@ -1,5 +1,7 @@
 //jq.mvc.js
-
+/*
+ * @copyright Intel
+ */
 //mvc.js
 (function($) {
     /**
@@ -268,7 +270,7 @@
      * @title $.mvc.controller.route
      */
     $.mvc.route = function(url, evt) {
-         if(typeof(url)!=="string"&&url.nodeName&&url.nodeName.toLowerCase()=="a") 
+        if(typeof(url)!=="string"&&url.nodeName&&url.nodeName.toLowerCase()=="a") 
             url=url.href;
         var route, axt;
 
