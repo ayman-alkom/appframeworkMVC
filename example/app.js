@@ -3,8 +3,7 @@ var app = new $.mvc.app();
 app.loadModels("todo");
 app.loadControllers("todo");
 //Routing by hash change
-app.setViewType("text/html");
-app.listenHashChange();
+//app.listenHashChange();
 
 
 $.mvc.addRoute("/archived",function(d){
