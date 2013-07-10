@@ -14,7 +14,7 @@
 	 
     $.mvc = {};
 
-    $.mvc._app; //Internal reference to app variable
+    $.mvc._app=null; //Internal reference to app variable
     $.mvc.app = function() {$.mvc._app=this;}
 
     $.mvc.app.prototype = {
@@ -95,8 +95,9 @@
                     $("head").append(file);
                     that._loadedListeners[urls[i]] = 1;
                     that._loadedListeners.length++;
-                    $(document).one(urls[i] + ":ready", function(e) {
-                        delete that._loadedListeners[e.data.name];
+                    $(document).one(urls[i] + ":ready", function(e,data) {
+                        data=data||e.data;
+                        delete that._loadedListeners[data.name];
                         that._loadedListeners.length--;
                         if(that._loadedListeners.length == 0) {
                             that._controllersReady = true;
@@ -462,7 +463,7 @@
             }
             this.linkerCache[type] = data ? data : {};
             //Fix dangling references
-            window.localStorage[type + "_linker"], JSON.stringify(this.linkerCache[type]);
+            window.localStorage[type + "_linker"]= JSON.stringify(this.linkerCache[type]);
             return callback(res);
 
         },

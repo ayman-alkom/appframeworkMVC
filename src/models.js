@@ -218,7 +218,7 @@
             }
             this.linkerCache[type] = data ? data : {};
             //Fix dangling references
-            window.localStorage[type + "_linker"], JSON.stringify(this.linkerCache[type]);
+            window.localStorage[type + "_linker"]= JSON.stringify(this.linkerCache[type]);
             return callback(res);
 
         },
