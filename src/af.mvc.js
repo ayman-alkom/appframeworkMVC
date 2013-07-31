@@ -151,7 +151,6 @@
 
 	
     $.mvc.route = function(url, evt,noHistory) {
-
         if(typeof(url)!=="string"&&url.nodeName&&url.nodeName.toLowerCase()=="a"){
             url=url.href;
         }else if(url.nodeName&&url.parentNode){
@@ -221,6 +220,7 @@
         });
     }
 })(af);
+
 
 
 //controller.js

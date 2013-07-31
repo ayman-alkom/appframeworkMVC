@@ -227,9 +227,11 @@
      * @title $.mvc.controller.route
      */
     $.mvc.route = function(url, evt,noHistory) {
-
-        if(typeof(url)!=="string"&&url.nodeName&&url.nodeName.toLowerCase()=="a")
+        if(typeof(url)!=="string"&&url.nodeName&&url.nodeName.toLowerCase()=="a"){
             url=url.href;
+        }else if(url.nodeName&&url.parentNode){
+            return $.mvc.route(url.parentNode, evt,noHistory);
+        }
 
         if(typeof(url)!=="string")
             throw "Invalid route parameter.  String or <a> expected";
