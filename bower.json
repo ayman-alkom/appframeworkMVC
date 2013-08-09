@@ -10,7 +10,7 @@
     "type": "git",
     "url" : "git@github.com:01org/appframeworkMVC.git"
   },
-  "main": "at.mvc.min.js",
+  "main": "af.mvc.min.js",
   "ignore": [
     "**/.*",
     "node_modules",
